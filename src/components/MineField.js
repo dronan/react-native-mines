@@ -26,6 +26,5 @@ export default props => {
 const styles = StyleSheet.create({
   container: {
     backgroundColor: '#EEE',
-    flexDirection: 'row',
   },
 });
