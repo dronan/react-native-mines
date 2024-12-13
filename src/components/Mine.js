@@ -1,7 +1,7 @@
 import React from 'react';
-import {StyleSheet, View, Text} from 'react-native';
+import {StyleSheet, View} from 'react-native';
 
-export default props => {
+export default () => {
   return (
     <View style={styles.container}>
       <View style={styles.coreMine} />

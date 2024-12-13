@@ -1,5 +1,16 @@
 import {Dimensions} from 'react-native';
 
+/**
+ * Configuration parameters for the game.
+ * @namespace params
+ * @property {number} blockSize - The size of each block in the game grid.
+ * @property {number} borderSize - The size of the border around each block.
+ * @property {number} fontSize - The font size used in the game.
+ * @property {number} headerRatio - The ratio of the screen height used for the header.
+ * @property {number} difficultLevel - The difficulty level of the game.
+ * @property {function} getColumnsAmount - Calculates the number of columns based on the screen width.
+ * @property {function} getRowsAmount - Calculates the number of rows based on the screen height.
+ */
 const params = {
   blockSize: 30,
   borderSize: 5,

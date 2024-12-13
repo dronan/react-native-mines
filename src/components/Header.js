@@ -20,12 +20,11 @@ export default props => {
 
 const styles = StyleSheet.create({
   container: {
+    flex: 1,
     flexDirection: 'row',
-    backgroundColor: '#EEE',
+    backgroundColor: '#AAA',
     alignItems: 'center',
     justifyContent: 'space-around',
-    paddingTop: 20,
-    paddingHorizontal: 20,
   },
   flagContainer: {
     flexDirection: 'row',
@@ -41,11 +40,12 @@ const styles = StyleSheet.create({
     marginLeft: 20,
   },
   button: {
-    backgroundColor: '#999',
+    backgroundColor: '#000',
     padding: 5,
   },
   buttonLabel: {
-    fontSize: 20,
+    fontSize: 15,
+    padding: 5,
     color: '#DDD',
     fontWeight: 'bold',
   },
