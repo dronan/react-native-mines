@@ -2,7 +2,8 @@ import React, { Component } from 'react';
 import {StyleSheet, Text, View, Alert } from 'react-native';
 import params from './src/params';
 import MineField from './src/components/MineField';
-import { createMinedBoard, cloneBoard, openField, hadExplosion, wonGame, showMines, invertFlag } from './src/functions';
+import { createMinedBoard, cloneBoard, openField, hadExplosion, wonGame, showMines, invertFlag, flagsUsed } from './src/functions';
+import Header from './src/components/Header';
 
 export default class App extends Component  {
 
@@ -59,11 +60,22 @@ export default class App extends Component  {
     this.setState({ board, won })
   }
 
+  onFlagPress = () => {
+    // @ts-ignore
+    const board = cloneBoard(this.state.board)
+    flagsUsed(board)
+    this.setState({ board })
+  }
+
   render() {
       return (
         <View style={styles.container}>
-          <Text>Iniciando mines!</Text>
-          <Text>Tamanho da grade: {params.getRowsAmount()}x{params.getColumnsAmount()} </Text>
+          <Header
+            onFlagPress={this.onFlagPress}
+            //@ts-ignore
+            flagsLeft={this.minesAmount() - flagsUsed(this.state.board)}
+            onNewGame={() => this.setState(this.createState())}
+          ></Header>
           <View style={styles.board}>
           <MineField 
             //@ts-ignore
